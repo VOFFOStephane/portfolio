@@ -15,21 +15,21 @@ export default function About() {
 
         <div className="about-grid">
           <div className="card">
-            <h3>🎓 Formation</h3>
+            <h3>Formation</h3>
             <p className="text-muted">{profile.formation.program}</p>
             <p className="text-muted">{profile.formation.school}</p>
             <p className="text-muted">Diplôme obtenu en {profile.formation.graduationYear}</p>
           </div>
 
           <div className="card">
-            <h3>🎯 Stage recherché</h3>
+            <h3>Stage recherché</h3>
             <p className="text-muted">Période : {profile.stage.period}</p>
             <p className="text-muted">Domaine : {profile.stage.domain}</p>
             <p className="text-muted">{profile.stage.note}</p>
           </div>
 
           <div className="card">
-            <h3>📍 Localisation</h3>
+            <h3>Localisation</h3>
             <p className="text-muted">{profile.location}</p>
             <p className="text-muted">Ouvert aux stages sur place ou à distance</p>
           </div>

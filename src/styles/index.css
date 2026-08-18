@@ -512,8 +512,8 @@ section {
 /* --- Contact --- */
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -523,7 +523,8 @@ section {
   gap: 14px;
   font-weight: 500;
   font-size: 1.05rem;
-  min-width: 0; /* permet au texte enfant de rétrécir/se couper au lieu de déborder */
+  flex: 1 1 220px; /* la carte grandit pour occuper l'espace, sans jamais descendre sous 220px */
+  white-space: nowrap; /* l'email/le texte reste sur une seule ligne (voir exception mobile ci-dessous) */
 }
 
 .contact-item svg {
@@ -532,9 +533,11 @@ section {
   color: var(--accent);
 }
 
-.contact-item span {
-  min-width: 0;
-  overflow-wrap: anywhere; /* coupe les adresses email/liens trop longs proprement */
+@media (max-width: 480px) {
+  .contact-item {
+    white-space: normal;
+    overflow-wrap: anywhere; /* sur très petit écran, on autorise la coupure pour éviter le débordement */
+  }
 }
 
 /* --- Footer --- */
